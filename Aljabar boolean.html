@@ -1,0 +1,735 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Aljabar boolean dan Gerbang logika &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Aljabar boolean';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Identitas Himpunan" href="Himpunan%20%281%29.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Logika.html">Logika Matematika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Algoritma.html">Algoritma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Himpunan%20%281%29.html">Identitas Himpunan</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aljabar boolean dan Gerbang logika</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAljabar boolean.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Aljabar boolean.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Aljabar boolean dan Gerbang logika</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aljabar boolean dan Gerbang logika</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gerbang-logika">Gerbang logika</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="aljabar-boolean-dan-gerbang-logika">
+<h1>Aljabar boolean dan Gerbang logika<a class="headerlink" href="#aljabar-boolean-dan-gerbang-logika" title="Link to this heading">#</a></h1>
+<p>Aljabar Boolean adalah sistem matematika yang bekerja dengan dua nilai, yaitu True (1) dan False (0), serta menggunakan operator logika untuk manipulasi ekspresi logika. Aljabar Boolean merupakan dasar dalam desain dan analisis sirkuit digital, pemrograman komputer, serta sistem logika.</p>
+<p>Aljabar boolean secara luas digunakan untuk menganalisis dan menyederhanakan sirkuit digital atau gerbang logika. Teori ini telah menjadi dasar dalam pengembangan sistem digital elektronika modern. Aljabar boolean juga sering digunakan dalam teori himpunan dan statistik.</p>
+<p>Bahkan pada setiap bahasa pemrograman modern, Boolean dianggap sebagai salah satu tipe data dasar dimana hanya memiliki 2 nilai, yaitu true dan false.
+Kaidah-kaidah Hukum Aljabar Boolean</p>
+<p>Terdapat 11 kaidah hukum Aljabar Boolean, yakni</p>
+<p>Berikut adalah penjelasannya:</p>
+<ol class="arabic simple">
+<li><p>Hukum Komutatif</p></li>
+</ol>
+<p>Hukum komutatif menyatakan bahwa penukaran urutan variabel tidak memiliki efek pada output dari rangkaian logika.
+A . B = B . A
+A + B = B + A</p>
+<ol class="arabic simple" start="2">
+<li><p>Hukum Asosiatif</p></li>
+</ol>
+<p>Hukum ini menyatakan bahwa operasi logika dapat dilakukan dalam urutan apa pun ketika prioritas variabelnya sama, terlepas dari adanya pengelompokan variabel dalam suatu persamaan.</p>
+<p>( A . B ) . C = A . ( B . C )
+( A + B ) + C = A + ( B + C)</p>
+<ol class="arabic simple" start="3">
+<li><p>Hukum Distributif</p></li>
+</ol>
+<p>Hukum distributif menjelaskan bahwa variabel input pada operasi aljabar boolean dapat disebarkan atau difaktorkan keluar dari ekspresi tanpa mengubah output suatu rangkaian logika.</p>
+<p>A . ( B + C) = (A . B) + (A. C)
+A + (B . C) = (A + B) . ( A + C)
+4. Hukum Absorbsi</p>
+<p>Hukum ini memungkinkan pengurangan ekspresi logika rumit menjadi lebih sederhana dengan menyerap suku-suku serupa.</p>
+<p>A + (A . B) = A
+A . (A + B) = A</p>
+<ol class="arabic simple" start="5">
+<li><p>Hukum Identitas</p></li>
+</ol>
+<p>Dalam  matematika, identitas adalah pernyataan yang benar untuk semua kemungkinan nilai dari variabel.</p>
+<p>Dalam Aljabar Boolean, hukum identitas menyatakan bahwa variabel apa pun yang dijumlahkan dengan nilai 0 atau false akan menghasilkan nilai variabel itu sendiri.</p>
+<p>Hal ini juga berlaku apabila sebuah variabel dikalikan dengan 1 atau nilai true maka akan mengembalikan nilai variabel itu sendiri.
+A + 0 = A
+A . 1 = A</p>
+<ol class="arabic simple" start="6">
+<li><p>Hukum Idempoten</p></li>
+</ol>
+<p>Hukum idempoten menyatakan bahwa menggabungkan suatu variabel dengan dirinya sendiri baik dengan operasi penambahan (OR) atau perkalian logika (AND) akan menghasilkan nilai yang setara dengan variabel tersebut.</p>
+<p>A + A = A
+A . A = A</p>
+<ol class="arabic simple" start="7">
+<li><p>Hukum Komplemen</p></li>
+</ol>
+<p>Hukum komplemen menyatakan bahwa variabel input yang dijumlahkan dengan invers dari variabel tersebut akan menghasilkan nilai 1 atau true, sedangkan jika dilakukan operasi perkalian menghasilkan nilai 0 atau false.</p>
+<p>A + A’ = 1
+A . A’ = 0</p>
+<ol class="arabic simple" start="8">
+<li><p>Hukum Dominasi</p></li>
+</ol>
+<p>Hukum dominasi menyatakan bahwa dalam suatu konjungsi atau operasi perkalian, suatu nilai kebenaran akan selalu mendominasi.</p>
+<p>A . 0 = 0
+A . 1 = 1</p>
+<ol class="arabic simple" start="9">
+<li><p>Hukum Involusi (Negasi Ganda)</p></li>
+</ol>
+<p>Dalam Aljabar Boolean, hukum involusi menyatakan bahwa negasi ganda pada variabel input menghasilkan output variabel itu sendiri.</p>
+<p>(A’)’ = A</p>
+<ol class="arabic simple" start="10">
+<li><p>Hukum De Morgan</p></li>
+</ol>
+<p>Dua teorema penting yang banyak digunakan dalam aljabar Boolean adalah hukum I De Morgan dan hukum II De Morgan. Kedua teorema ini digunakan untuk mengubah ekspresi Boolean.</p>
+<p>Teorema ini pada dasarnya membantu untuk mengurangi ekspresi boolean yang diberikan dalam bentuk yang disederhanakan.</p>
+<p>Hukum I De Morgan</p>
+<p>Hukum pertama menyatakan bahwa komplemen perkalian variabel sama dengan jumlah komplemen individu variabelnya.</p>
+<p>(A.B)’ = A’ + B’</p>
+<p>Hukum II De Morgan</p>
+<p>Hukum kedua menyatakan bahwa komplemen dari penjumlahan variabel sama dengan perkalian dari komplemen individualnya terhadap suatu variabel.</p>
+<p>(A+B)’ = A’ . B’</p>
+<ol class="arabic simple" start="11">
+<li><p>Hukum Inversi</p></li>
+</ol>
+<p>Hukum inversi menjelaskan bahwa komplemen dari nilai kebenaran adalah invers dari nilai tersebut.</p>
+<p>0’ = 1
+1’ = 0</p>
+</section>
+<section id="gerbang-logika">
+<h1>Gerbang logika<a class="headerlink" href="#gerbang-logika" title="Link to this heading">#</a></h1>
+<p>adalah perangkat yang melakukan operasi logika dengan menggunakan aljabar Boolean, suatu sistem matematika yang digunakan untuk menganalisis dan menyederhanakan ekspresi logika.
+Gerbang Logika Dasar dalam Konteks Aljabar Boolean
+Gerbang NOT
+Gerbang NOT, atau gerbang inverter, membalik logika masukan. Tanda lingkaran kecil pada keluaran gerbang merupakan tanda pembalik.</p>
+<p>Notasi Boolean untuk gerbang NOT adalah adanya garis di atas suatu variabel. Misalnya, NOT A dinotasikan sebagai ( \overline{A} ). Notasi lain untuk NOT A adalah ( A’ ), ( !A ), dan ( \sim A ).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>Y=A</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Gerbang OR
+Output dari gerbang OR akan bernilai 1 jika salah satu dari inputnya adalah 1. Dalam notasi Boolean, gerbang OR dilambangkan dengan simbol ( + ). Operasi OR antara A dan B dinyatakan sebagai ( A + B ).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Y = A+B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Gerbang AND
+Output dari gerbang AND akan bernilai 1 hanya jika semua inputnya bernilai 1. Dalam notasi Boolean, gerbang AND dilambangkan dengan simbol ( . ) (kali). Operasi AND antara A dan B dinyatakan sebagai ( A \C_B ) dan tabel pembuktiannya sama dengan gerbang OR</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Y = A.B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Gerbang NOR</p>
+<p>Gerbang NOR (NOT-OR) dapat dibentuk dari gabungan gerbang OR dan NOT. Gerbang NOR menghasilkan output 1 hanya jika semua inputnya adalah 0. Jika salah satu atau lebih input bernilai 1, maka outputnya akan menjadi 0.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A+B</p></th>
+<th class="head"><p>Y= A+B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Gerbang NAND
+Gerbang NAND (NOT-AND) dibentuk dari gerbang AND dan NOT. Gerbang NAND menghasilkan output 0 hanya jika semua inputnya adalah 1. Sebaliknya, jika salah satu atau lebih inputnya adalah 0, outputnya akan menjadi 1.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Y = AB</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Referensi :<a class="reference external" href="https://www.trivusi.web.id/2022/08/aljabar-boolean.html?m=1">https://www.trivusi.web.id/2022/08/aljabar-boolean.html?m=1</a>
+<a class="reference external" href="https://inovasi.ac.id/wiki/prinsip-gerbang-logika/">https://inovasi.ac.id/wiki/prinsip-gerbang-logika/</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Himpunan%20%281%29.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Identitas Himpunan</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aljabar boolean dan Gerbang logika</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gerbang-logika">Gerbang logika</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
