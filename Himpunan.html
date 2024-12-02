@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Identitas Himpunan &#8212; My sample book</title>
+    <title>Himpunan &#8212; My sample book</title>
   
   
   
@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -36,10 +38,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -59,13 +62,14 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Himpunan (1)';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Himpunan';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Aljabar boolean dan Gerbang logika" href="Aljabar%20boolean.html" />
-    <link rel="prev" title="Algoritma" href="Algoritma.html" />
+    <link rel="next" title="Logika Matematika" href="Logika%20dan%20Pembuktian.html" />
+    <link rel="prev" title="Welcome to your Mathematic diskret" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,36 +149,34 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Welcome to your Mathematic diskret
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Logika.html">Logika Matematika</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Himpunan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Logika%20dan%20Pembuktian.html">Logika Matematika</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Algoritma.html">Algoritma</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Identitas Himpunan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aljabar%20boolean.html">Aljabar boolean dan Gerbang logika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="social%20network.html">Social Network Analysis (SNA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deret%20dan%20Rekursi.html">Deretan</a></li>
 
 </ul>
 
@@ -258,7 +249,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FHimpunan (1).html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FHimpunan.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +279,7 @@
       
       
       
-      <li><a href="_sources/Himpunan (1).md" target="_blank"
+      <li><a href="_sources/Himpunan.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,24 +332,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -372,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Identitas Himpunan</h1>
+    <h1>Himpunan</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,36 +365,39 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-identitas"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Identitas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#himpunan-a-cup-emptyset-a">1. Himpunan <span class="math notranslate nohighlight">\(A \cup \emptyset = A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#himpunan-a-cap-u-a">2. Himpunan <span class="math notranslate nohighlight">\(A \cap U = A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-dominasi"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Dominasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-gabungan-a-cup-u-u">1. Hukum Gabungan  <span class="math notranslate nohighlight">\(A \cup U = U\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-irisan-dengan-himpunan-kosong-a-cap-emptyset-emptyset">2. Hukum Irisan dengan Himpunan Kosong: <span class="math notranslate nohighlight">\(A \cap \emptyset = \emptyset\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-idempoten"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum idempoten</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#irisan-himpunan-dengan-diri-sendiri-cap">1. Irisan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(𝐴 \cap 𝐴\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gabungan-himpunan-dengan-diri-sendiri-a-cup-a">2. Gabungan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(A \cup A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-komplementasi"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komplementasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplemen-dari-komplemen-himpunan-overline-overline-a-a">Komplemen dari Komplemen Himpunan: <span class="math notranslate nohighlight">\(\overline{\overline{A}} = A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-komutatif-dalam-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komutatif Dalam Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-komutatif-untuk-gabungan-union-a-cup-b-b-cup-a">1. Hukum Komutatif untuk Gabungan (Union):<span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-komutatif-untuk-irisan-intersection-a-cap-b-b-cap-a">2. Hukum Komutatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-asosiatif-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Asosiatif dalam Teori Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-asosiatif-untuk-gabungan-union-a-cup-b-cup-c-a-cup-b-cup-c">1. Hukum Asosiatif untuk Gabungan (Union): <span class="math notranslate nohighlight">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>**</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-asosiatif-untuk-irisan-intersection-a-cap-b-cap-c-a-cap-b-cap-c">2. Hukum Asosiatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-distributif-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Distributif dalam Teori Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-distributif-union-terhadap-intersection-a-cup-b-cap-c-a-cup-b-cap-a-cup-c">1.Hukum Distributif Union terhadap Intersection: <span class="math notranslate nohighlight">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-distributif-intersection-terhadap-union-a-cap-b-cup-c-a-cap-b-cup-a-cap-c">2.Hukum Distributif Intersection terhadap Union: <span class="math notranslate nohighlight">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-de-morgan-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum De Morgan dalam Teori Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-de-morgan-untuk-gabungan-overline-a-cup-b-overline-a-cap-overline-b">1.Hukum De Morgan untuk Gabungan: <span class="math notranslate nohighlight">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-de-morgan-untuk-irisan-overline-a-cap-b-overline-a-cup-overline-b">2.Hukum De Morgan untuk Irisan: <span class="math notranslate nohighlight">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identitas-himpunan">Identitas Himpunan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-identitas"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Identitas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#himpunan-a-cup-emptyset-a">1. Himpunan <span class="math notranslate nohighlight">\(A \cup \emptyset = A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#himpunan-a-cap-u-a">2. Himpunan <span class="math notranslate nohighlight">\(A \cap U = A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-dominasi"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Dominasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-gabungan-a-cup-u-u">1. Hukum Gabungan  <span class="math notranslate nohighlight">\(A \cup U = U\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-irisan-dengan-himpunan-kosong-a-cap-emptyset-emptyset">2. Hukum Irisan dengan Himpunan Kosong: <span class="math notranslate nohighlight">\(A \cap \emptyset = \emptyset\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-idempoten"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum idempoten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irisan-himpunan-dengan-diri-sendiri-cap">1. Irisan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(𝐴 \cap 𝐴\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gabungan-himpunan-dengan-diri-sendiri-a-cup-a">2. Gabungan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(A \cup A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-komplementasi"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komplementasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komplemen-dari-komplemen-himpunan-overline-overline-a-a">Komplemen dari Komplemen Himpunan: <span class="math notranslate nohighlight">\(\overline{\overline{A}} = A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-komutatif-dalam-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komutatif Dalam Himpunan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-komutatif-untuk-gabungan-union-a-cup-b-b-cup-a">1. Hukum Komutatif untuk Gabungan (Union):<span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-komutatif-untuk-irisan-intersection-a-cap-b-b-cap-a">2. Hukum Komutatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-asosiatif-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Asosiatif dalam Teori Himpunan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-asosiatif-untuk-gabungan-union-a-cup-b-cup-c-a-cup-b-cup-c">1. Hukum Asosiatif untuk Gabungan (Union): <span class="math notranslate nohighlight">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-asosiatif-untuk-irisan-intersection-a-cap-b-cap-c-a-cap-b-cap-c">2. Hukum Asosiatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-distributif-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Distributif dalam Teori Himpunan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-distributif-union-terhadap-intersection-a-cup-b-cap-c-a-cup-b-cap-a-cup-c">1.Hukum Distributif Union terhadap Intersection: <span class="math notranslate nohighlight">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-distributif-intersection-terhadap-union-a-cap-b-cup-c-a-cap-b-cup-a-cap-c">2.Hukum Distributif Intersection terhadap Union: <span class="math notranslate nohighlight">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-de-morgan-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum De Morgan dalam Teori Himpunan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-de-morgan-untuk-gabungan-overline-a-cup-b-overline-a-cap-overline-b">1.Hukum De Morgan untuk Gabungan: <span class="math notranslate nohighlight">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-de-morgan-untuk-irisan-overline-a-cap-b-overline-a-cup-overline-b">2.Hukum De Morgan untuk Irisan: <span class="math notranslate nohighlight">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Kesimpulan</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -423,7 +409,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><span class="math notranslate nohighlight">\(\overline{A \cap B}=\bar{A} \cup \bar{B}\)</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="himpunan">
+<h1>Himpunan<a class="headerlink" href="#himpunan" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\overline{A \cap B}=\bar{A} \cup \bar{B}\)</span>
 <span class="math notranslate nohighlight">\(\overline{A \cup B}=\bar{A} \cap \bar{B}\)</span><br />
 <span class="math notranslate nohighlight">\(A \cup(A \cap B)=A\)</span>
 <span class="math notranslate nohighlight">\(A \cap(A \cup B)=A\)</span>
@@ -436,13 +424,13 @@ A = {singa, kuda , kucing, kelinci}
 Maka, himpunan A adalah himpunan hewan berkaki empat dengan n(A) = 4
 Kelinci ∈ A (kelinci adalah anggota himpunan A, dan ayam ∉ A (ayam bukan anggota himpunan</p>
 <section id="identitas-himpunan">
-<h1>Identitas Himpunan<a class="headerlink" href="#identitas-himpunan" title="Link to this heading">#</a></h1>
+<h2>Identitas Himpunan<a class="headerlink" href="#identitas-himpunan" title="Link to this heading">#</a></h2>
 <p>Identitas adalah persamaan untuk semua elemen dalam suatu himpunan . Misalnya, persamaan a + b = b+a adalah identitas untuk bilangan riil karena berlaku untuk semua bilangan riil a dan b. Kumpulan sifat himpunan dalam teorema berikut seluruhnya terdiri dari identitas himpunan.</p>
 <section id="diamond-hukum-identitas">
-<h2><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Identitas<a class="headerlink" href="#diamond-hukum-identitas" title="Link to this heading">#</a></h2>
+<h3><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Identitas<a class="headerlink" href="#diamond-hukum-identitas" title="Link to this heading">#</a></h3>
 </section>
 <section id="himpunan-a-cup-emptyset-a">
-<h2>1. Himpunan <span class="math notranslate nohighlight">\(A \cup \emptyset = A\)</span><a class="headerlink" href="#himpunan-a-cup-emptyset-a" title="Link to this heading">#</a></h2>
+<h3>1. Himpunan <span class="math notranslate nohighlight">\(A \cup \emptyset = A\)</span><a class="headerlink" href="#himpunan-a-cup-emptyset-a" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(A \cup \emptyset = \{ x \mid x \in A \text{ atau } x \in \emptyset \}\)</span></p>
 <p>Karena
 <span class="math notranslate nohighlight">\(x \in \emptyset\)</span> adalah kondisi yang tidak mungkin terjadi (karena <span class="math notranslate nohighlight">\(\emptyset\)</span> tidak memiliki elemen), maka gabungan ini hanya akan berisi elemen-elemen dari</p>
@@ -463,7 +451,7 @@ Operasi union antara himpunan <span class="math notranslate nohighlight">\(A\)</
 Jika <span class="math notranslate nohighlight">\(𝐴 =\{1,2,3\},\text {maka} 𝐴 \cup \emptyset =\{1,2,3\}\)</span></p>
 </section>
 <section id="himpunan-a-cap-u-a">
-<h2>2. Himpunan <span class="math notranslate nohighlight">\(A \cap U = A\)</span><a class="headerlink" href="#himpunan-a-cap-u-a" title="Link to this heading">#</a></h2>
+<h3>2. Himpunan <span class="math notranslate nohighlight">\(A \cap U = A\)</span><a class="headerlink" href="#himpunan-a-cap-u-a" title="Link to this heading">#</a></h3>
 <p><em><span class="math notranslate nohighlight">\(A \cap U = \{ x \mid x \in A \text{ dan } x \in U \}\)</span></em></p>
 <p>Karena <span class="math notranslate nohighlight">\(𝑈\)</span> adalah ruang semesta yang mencakup semua elemen yang relevan, setiap elemen <span class="math notranslate nohighlight">\(𝑥\)</span> dari <span class="math notranslate nohighlight">\(𝐴\)</span> juga merupakan elemen dari <span class="math notranslate nohighlight">\(𝑈\)</span>,ini menyatakan bahwa irisan antara <span class="math notranslate nohighlight">\(𝐴\)</span> dan <span class="math notranslate nohighlight">\(𝑈\)</span> adalah himpunan <span class="math notranslate nohighlight">\(𝐴\)</span> itu sendiri,karena <span class="math notranslate nohighlight">\(𝑈\)</span> tidak mengubah himpunan <span class="math notranslate nohighlight">\(𝐴\)</span></p>
 <p><em>Definisi</em>:</p>
@@ -481,17 +469,17 @@ Operasi irisan antara himpunan <span class="math notranslate nohighlight">\(A\)<
 <p>Jika <span class="math notranslate nohighlight">\(𝑈\)</span> <span class="math notranslate nohighlight">\(=\{1,2,3,4,5\}\)</span> dan <span class="math notranslate nohighlight">\(𝐴\)</span> <span class="math notranslate nohighlight">\(=/{1,2,3/}\)</span>, maka <span class="math notranslate nohighlight">\(A \cap U=\{1,2,3\}\)</span>.</p>
 </section>
 <section id="kesimpulan">
-<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<h3>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Gabungan himpunan <span class="math notranslate nohighlight">\(A\)</span> dengan himpunan kosong <span class="math notranslate nohighlight">\(\emptyset\)</span> menghasilkan himpunan <span class="math notranslate nohighlight">\(A\)</span> itu sendiri.</p></li>
 <li><p>Irisan himpunan <span class="math notranslate nohighlight">\(A\)</span> dengan himpunan semesta <span class="math notranslate nohighlight">\(U\)</span> juga menghasilkan himpunan <span class="math notranslate nohighlight">\(A\)</span> itu sendiri.</p></li>
 </ol>
 </section>
 <section id="diamond-hukum-dominasi">
-<h2><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Dominasi<a class="headerlink" href="#diamond-hukum-dominasi" title="Link to this heading">#</a></h2>
+<h3><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Dominasi<a class="headerlink" href="#diamond-hukum-dominasi" title="Link to this heading">#</a></h3>
 </section>
 <section id="hukum-gabungan-a-cup-u-u">
-<h2>1. Hukum Gabungan  <span class="math notranslate nohighlight">\(A \cup U = U\)</span><a class="headerlink" href="#hukum-gabungan-a-cup-u-u" title="Link to this heading">#</a></h2>
+<h3>1. Hukum Gabungan  <span class="math notranslate nohighlight">\(A \cup U = U\)</span><a class="headerlink" href="#hukum-gabungan-a-cup-u-u" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(A\cup U=\{ x \mid x \in A atau x \in U\}\)</span></p>
 <p>Karena <span class="math notranslate nohighlight">\(𝑈\)</span> adalah ruang semesta yang mencakup semua elemen, maka kondisi <span class="math notranslate nohighlight">\(𝑥 \in 𝑈\)</span> selalu benar jika <span class="math notranslate nohighlight">\(𝑥\)</span> berada di <span class="math notranslate nohighlight">\(𝑈\)</span>,Karena <span class="math notranslate nohighlight">\(𝑥 \in 𝑈\)</span> mencakup semua elemen dalam konteks tersebu</p>
@@ -510,7 +498,7 @@ Operasi irisan antara himpunan <span class="math notranslate nohighlight">\(A\)<
 <p><span class="math notranslate nohighlight">\(\{2, 4, 6, 8, 10\} \cup \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\} = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}\)</span></p>
 </section>
 <section id="hukum-irisan-dengan-himpunan-kosong-a-cap-emptyset-emptyset">
-<h2>2. Hukum Irisan dengan Himpunan Kosong: <span class="math notranslate nohighlight">\(A \cap \emptyset = \emptyset\)</span><a class="headerlink" href="#hukum-irisan-dengan-himpunan-kosong-a-cap-emptyset-emptyset" title="Link to this heading">#</a></h2>
+<h3>2. Hukum Irisan dengan Himpunan Kosong: <span class="math notranslate nohighlight">\(A \cap \emptyset = \emptyset\)</span><a class="headerlink" href="#hukum-irisan-dengan-himpunan-kosong-a-cap-emptyset-emptyset" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(A \cap \emptyset =\{x \mid x \in A dan x \in \emptyset \}\)</span></p>
 <p>Karena tidak ada elemen yang berada di <span class="math notranslate nohighlight">\(\emptyset\)</span>, kondisi <span class="math notranslate nohighlight">\(𝑥 \in \emptyset\)</span> selalu salah. Dengan demikian, irisan <span class="math notranslate nohighlight">\(𝐴 \cap \emptyset\)</span> tidak mengandung elemen apapun</p>
@@ -529,7 +517,7 @@ Dalam hal ini:
 <span class="math notranslate nohighlight">\(\{2, 4, 6, 8, 10\} \cap \{\} = \{\}\)</span></p>
 </section>
 <section id="id1">
-<h2>Kesimpulan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h3>Kesimpulan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><em><span class="math notranslate nohighlight">\(A \cup U =U\)</span> :</em> Gabungan antara himpunan <span class="math notranslate nohighlight">\(A\)</span> dengan ruang semesta <span class="math notranslate nohighlight">\(U\)</span> adalah ruang semesta <span class="math notranslate nohighlight">\(U\)</span> itu sendiri, karena ruang semesta sudah mencakup semua elemen yang mungkin.</p></li>
 <li><p><em><span class="math notranslate nohighlight">\(A \cap \emptyset = \emptyset\)</span>:</em> Irisan antara himpunan <span class="math notranslate nohighlight">\(A\)</span> dan himpunan kosong <span class="math notranslate nohighlight">\(\emptyset\)</span> adalah himpunan kosong <span class="math notranslate nohighlight">\(\emptyset\)</span>, karena tidak ada elemen di himpunan kosong yang dapat beririsan dengan elemen di <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
@@ -537,10 +525,10 @@ Dalam hal ini:
 <p>Kedua hukum ini adalah dasar penting dalam teori himpunan dan membantu dalam menyederhanakan ekspresi himpunan serta dalam pemahaman dasar tentang bagaimana operasi himpunan berfungsi.</p>
 </section>
 <section id="diamond-hukum-idempoten">
-<h2><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum idempoten<a class="headerlink" href="#diamond-hukum-idempoten" title="Link to this heading">#</a></h2>
+<h3><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum idempoten<a class="headerlink" href="#diamond-hukum-idempoten" title="Link to this heading">#</a></h3>
 </section>
 <section id="irisan-himpunan-dengan-diri-sendiri-cap">
-<h2>1. Irisan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(𝐴 \cap 𝐴\)</span><a class="headerlink" href="#irisan-himpunan-dengan-diri-sendiri-cap" title="Link to this heading">#</a></h2>
+<h3>1. Irisan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(𝐴 \cap 𝐴\)</span><a class="headerlink" href="#irisan-himpunan-dengan-diri-sendiri-cap" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(A \cap A =\{x \mid x \in A dan x \in A \}\)</span></p>
 <p>Karena <span class="math notranslate nohighlight">\(𝑥 \in 𝐴\)</span> dan <span class="math notranslate nohighlight">\(𝑥 \in 𝐴\)</span> hanya memberikan <span class="math notranslate nohighlight">\(𝑥 \in 𝐴\)</span></p>
@@ -551,7 +539,7 @@ Dalam hal ini:
 <p>Misalkan <span class="math notranslate nohighlight">\(A=\{1,2,3\}. \text{maka}: A∩A=\{1,2,3\}\)</span></p>
 </section>
 <section id="gabungan-himpunan-dengan-diri-sendiri-a-cup-a">
-<h2>2. Gabungan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(A \cup A\)</span><a class="headerlink" href="#gabungan-himpunan-dengan-diri-sendiri-a-cup-a" title="Link to this heading">#</a></h2>
+<h3>2. Gabungan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(A \cup A\)</span><a class="headerlink" href="#gabungan-himpunan-dengan-diri-sendiri-a-cup-a" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(A \cup A = \{ x \mid x \in A \text{ atau } x \in A \} = A\)</span></p>
 <p>Karena <span class="math notranslate nohighlight">\(𝑥 \in 𝐴\)</span> atau <span class="math notranslate nohighlight">\(𝑥 \in 𝐴\)</span> hanya memberikan <span class="math notranslate nohighlight">\(𝑥 \in 𝐴\)</span>,</p>
@@ -570,10 +558,10 @@ Dalam hal ini:
 <p>Tentu! Hukum terkait himpunan komplemen dari komplemen adalah salah satu hukum dasar dalam teori himpunan. Mari kita bahas dengan rinci.</p>
 </section>
 <section id="diamond-hukum-komplementasi">
-<h2><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komplementasi<a class="headerlink" href="#diamond-hukum-komplementasi" title="Link to this heading">#</a></h2>
+<h3><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komplementasi<a class="headerlink" href="#diamond-hukum-komplementasi" title="Link to this heading">#</a></h3>
 </section>
 <section id="komplemen-dari-komplemen-himpunan-overline-overline-a-a">
-<h2>Komplemen dari Komplemen Himpunan: <span class="math notranslate nohighlight">\(\overline{\overline{A}} = A\)</span><a class="headerlink" href="#komplemen-dari-komplemen-himpunan-overline-overline-a-a" title="Link to this heading">#</a></h2>
+<h3>Komplemen dari Komplemen Himpunan: <span class="math notranslate nohighlight">\(\overline{\overline{A}} = A\)</span><a class="headerlink" href="#komplemen-dari-komplemen-himpunan-overline-overline-a-a" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(\overline{\overline{A}} = \{ x \mid x \in U \text{ dan } x \notin \overline{A} \} = \{ x \mid x \in U \text{ dan } x \in A \} = A\)</span></p>
 <p><em>Penjelasan:</em></p>
@@ -609,7 +597,7 @@ Dalam hal ini:
 <p><span class="math notranslate nohighlight">\(\overline{\overline{A}} = A\)</span></p>
 </section>
 <section id="id2">
-<h2>Kesimpulan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h3>Kesimpulan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><em>Komplemen dari Komplemen <span class="math notranslate nohighlight">\((\overline{\overline{A}})\)</span></em>: Menghasilkan himpunan asli <span class="math notranslate nohighlight">\(A\)</span>. Ini berarti jika Anda mengambil komplemen dari himpunan komplemen, Anda akan kembali ke himpunan awal.</p></li>
 <li><p><em>Hukum ini</em>: Menunjukkan bahwa operasi komplemen adalah operasi invers, yaitu melakukan komplemen dua kali akan kembali ke himpunan yang asli.</p></li>
@@ -617,11 +605,11 @@ Dalam hal ini:
 <p>Hukum ini penting dalam teori himpunan dan logika karena menunjukkan sifat invers dari operasi komplemen. Ini juga merupakan dasar untuk memahami hubungan antara himpunan dan operasi logika dalam matematika dan ilmu komputer.</p>
 </section>
 <section id="diamond-hukum-komutatif-dalam-himpunan">
-<h2><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komutatif Dalam Himpunan<a class="headerlink" href="#diamond-hukum-komutatif-dalam-himpunan" title="Link to this heading">#</a></h2>
+<h3><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komutatif Dalam Himpunan<a class="headerlink" href="#diamond-hukum-komutatif-dalam-himpunan" title="Link to this heading">#</a></h3>
 <p>Tentu! Hukum komutatif adalah salah satu hukum dasar dalam teori himpunan dan aljabar yang menjelaskan bahwa urutan operasi tidak mempengaruhi hasil. Hukum ini berlaku untuk operasi gabungan (union) dan irisan (intersection) dalam teori himpunan, serta untuk operasi penjumlahan dan perkalian dalam aljabar</p>
 </section>
 <section id="hukum-komutatif-untuk-gabungan-union-a-cup-b-b-cup-a">
-<h2>1. Hukum Komutatif untuk Gabungan (Union):<span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span><a class="headerlink" href="#hukum-komutatif-untuk-gabungan-union-a-cup-b-b-cup-a" title="Link to this heading">#</a></h2>
+<h3>1. Hukum Komutatif untuk Gabungan (Union):<span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span><a class="headerlink" href="#hukum-komutatif-untuk-gabungan-union-a-cup-b-b-cup-a" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(A \cup B = \{ x \mid x \in A \text{ atau } x \in B \}=B \cup A = \{ x \mid x \in B \text{ atau } x \in A \}\)</span></p>
 <p><em>Penjelasan:</em></p>
@@ -636,7 +624,7 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 <p><span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span></p>
 </section>
 <section id="hukum-komutatif-untuk-irisan-intersection-a-cap-b-b-cap-a">
-<h2>2. Hukum Komutatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span><a class="headerlink" href="#hukum-komutatif-untuk-irisan-intersection-a-cap-b-b-cap-a" title="Link to this heading">#</a></h2>
+<h3>2. Hukum Komutatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span><a class="headerlink" href="#hukum-komutatif-untuk-irisan-intersection-a-cap-b-b-cap-a" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(A \cap B = \{ x \mid x \in A \text{ dan } x \in B \} = B \cap A = \{ x \mid x \in B \text{ dan } x \in A \}\)</span></p>
 <p><em>Penjelasan:</em></p>
@@ -651,7 +639,7 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 <p><span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span></p>
 </section>
 <section id="id3">
-<h2>Kesimpulan<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h3>Kesimpulan<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><em>Hukum Komutatif untuk Gabungan (Union):</em> Mengatakan bahwa <span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span>.</p></li>
 <li><p><em>Hukum Komutatif untuk Irisan (Intersection):</em> Mengatakan bahwa <span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span>.</p></li>
@@ -661,10 +649,10 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 <p>Hukum asosiatif dalam teori himpunan adalah prinsip yang menunjukkan bahwa cara kita mengelompokkan himpunan saat melakukan operasi gabungan (union) atau irisan (intersection) tidak mempengaruhi hasil akhir. Hukum ini berlaku untuk operasi gabungan dan irisan dan sangat mirip dengan hukum asosiatif dalam aljabar.</p>
 </section>
 <section id="diamond-hukum-asosiatif-dalam-teori-himpunan">
-<h2><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Asosiatif dalam Teori Himpunan<a class="headerlink" href="#diamond-hukum-asosiatif-dalam-teori-himpunan" title="Link to this heading">#</a></h2>
+<h3><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Asosiatif dalam Teori Himpunan<a class="headerlink" href="#diamond-hukum-asosiatif-dalam-teori-himpunan" title="Link to this heading">#</a></h3>
 </section>
 <section id="hukum-asosiatif-untuk-gabungan-union-a-cup-b-cup-c-a-cup-b-cup-c">
-<h2>1. Hukum Asosiatif untuk Gabungan (Union): <span class="math notranslate nohighlight">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>**<a class="headerlink" href="#hukum-asosiatif-untuk-gabungan-union-a-cup-b-cup-c-a-cup-b-cup-c" title="Link to this heading">#</a></h2>
+<h3>1. Hukum Asosiatif untuk Gabungan (Union): <span class="math notranslate nohighlight">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>**<a class="headerlink" href="#hukum-asosiatif-untuk-gabungan-union-a-cup-b-cup-c-a-cup-b-cup-c" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\((A \cup B) \cup C = \{ x \mid x \in (A \cup B) \text{ atau } x \in C \}\)</span> = <span class="math notranslate nohighlight">\(A \cup (B \cup C) = \{ x \mid x \in A \text{ atau } x \in (B \cup C) \}\)</span></p>
 <p><em>Penjelasan:</em></p>
@@ -679,7 +667,7 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 <p><span class="math notranslate nohighlight">\((A \cup B) \cup C = A \cup (B \cup C)\)</span></p>
 </section>
 <section id="hukum-asosiatif-untuk-irisan-intersection-a-cap-b-cap-c-a-cap-b-cap-c">
-<h2>2. Hukum Asosiatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\((A \cap B) \cap C = A \cap (B \cap C)\)</span><a class="headerlink" href="#hukum-asosiatif-untuk-irisan-intersection-a-cap-b-cap-c-a-cap-b-cap-c" title="Link to this heading">#</a></h2>
+<h3>2. Hukum Asosiatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\((A \cap B) \cap C = A \cap (B \cap C)\)</span><a class="headerlink" href="#hukum-asosiatif-untuk-irisan-intersection-a-cap-b-cap-c-a-cap-b-cap-c" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\((A \cap B) \cap C = \{ x \mid x \in A \text{ dan } x \in B \text{ dan } x \in C \}\)</span>  = <span class="math notranslate nohighlight">\(A \cap (B \cap C) = \{ x \mid x \in A \text{ dan } x \in B \text{ dan } x \in C \}\)</span></p>
 <p><em>Penjelasan:</em></p>
@@ -694,7 +682,7 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 <p><span class="math notranslate nohighlight">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></p>
 </section>
 <section id="id4">
-<h2>Kesimpulan<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h3>Kesimpulan<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul>
 <li><p><em>Hukum Asosiatif untuk Gabungan (Union):</em> Mengatakan bahwa gabungan dari tiga himpunan <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, dan <span class="math notranslate nohighlight">\(C\)</span> tidak terpengaruh oleh cara kita mengelompokkan himpunan-himpunan tersebut.</p>
 <p><span class="math notranslate nohighlight">\((A \cup B) \cup C = A \cup (B \cup C)\)</span></p>
@@ -706,10 +694,10 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 <p>Hukum asosiatif memastikan bahwa cara pengelompokan himpunan dalam operasi gabungan dan irisan tidak mempengaruhi hasil akhir, yang merupakan prinsip penting dalam teori himpunan dan aljabar.</p>
 </section>
 <section id="diamond-hukum-distributif-dalam-teori-himpunan">
-<h2><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Distributif dalam Teori Himpunan<a class="headerlink" href="#diamond-hukum-distributif-dalam-teori-himpunan" title="Link to this heading">#</a></h2>
+<h3><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Distributif dalam Teori Himpunan<a class="headerlink" href="#diamond-hukum-distributif-dalam-teori-himpunan" title="Link to this heading">#</a></h3>
 </section>
 <section id="hukum-distributif-union-terhadap-intersection-a-cup-b-cap-c-a-cup-b-cap-a-cup-c">
-<h2>1.Hukum Distributif Union terhadap Intersection: <span class="math notranslate nohighlight">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span><a class="headerlink" href="#hukum-distributif-union-terhadap-intersection-a-cup-b-cap-c-a-cup-b-cap-a-cup-c" title="Link to this heading">#</a></h2>
+<h3>1.Hukum Distributif Union terhadap Intersection: <span class="math notranslate nohighlight">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span><a class="headerlink" href="#hukum-distributif-union-terhadap-intersection-a-cup-b-cap-c-a-cup-b-cap-a-cup-c" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C) = \{x \mid x \in A dan (x \in B atau x \in C)\}=\{x \mid(x 
 \in A dan x \in B) atau (x \in A dan x \in C)\}\)</span></p>
@@ -742,7 +730,7 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 <p>Kedua sisi menghasilkan himpunan yang sama: <span class="math notranslate nohighlight">\(\{1, 2, 3\}\)</span>.</p>
 </section>
 <section id="hukum-distributif-intersection-terhadap-union-a-cap-b-cup-c-a-cap-b-cup-a-cap-c">
-<h2>2.Hukum Distributif Intersection terhadap Union: <span class="math notranslate nohighlight">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span><a class="headerlink" href="#hukum-distributif-intersection-terhadap-union-a-cap-b-cup-c-a-cap-b-cup-a-cap-c" title="Link to this heading">#</a></h2>
+<h3>2.Hukum Distributif Intersection terhadap Union: <span class="math notranslate nohighlight">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span><a class="headerlink" href="#hukum-distributif-intersection-terhadap-union-a-cap-b-cup-c-a-cap-b-cup-a-cap-c" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan:</em></p>
 <p><span class="math notranslate nohighlight">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C) = \{x \mid x \in A dan (x \in B atau x \in C)\}=\{x \mid(x 
 \in A dan x \in B) atau (x \in A dan x \in C)\}\)</span></p>
@@ -775,15 +763,15 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 <p>Kedua sisi menghasilkan himpunan yang sama: <span class="math notranslate nohighlight">\(\{2, 3\}\)</span>.</p>
 </section>
 <section id="id5">
-<h2>Kesimpulan<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h3>Kesimpulan<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Hukum-hukum distributif ini memastikan bahwa operasi gabungan (union) dan irisan (intersection) dalam teori himpunan bersifat konsisten dan dapat dipertukarkan, memungkinkan kita untuk menyederhanakan ekspresi himpunan dan melakukan manipulasi yang lebih kompleks dengan cara yang sistematis.</p>
 </section>
 <section id="diamond-hukum-de-morgan-dalam-teori-himpunan">
-<h2><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum De Morgan dalam Teori Himpunan<a class="headerlink" href="#diamond-hukum-de-morgan-dalam-teori-himpunan" title="Link to this heading">#</a></h2>
+<h3><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum De Morgan dalam Teori Himpunan<a class="headerlink" href="#diamond-hukum-de-morgan-dalam-teori-himpunan" title="Link to this heading">#</a></h3>
 <p>Hukum De Morgan untuk himpunan terdiri dari dua hukum yang saling berhubungan. Mereka memberikan cara untuk mengekspresikan negasi dari gabungan dan irisan himpunan dalam bentuk yang berbeda.</p>
 </section>
 <section id="hukum-de-morgan-untuk-gabungan-overline-a-cup-b-overline-a-cap-overline-b">
-<h2>1.Hukum De Morgan untuk Gabungan: <span class="math notranslate nohighlight">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span><a class="headerlink" href="#hukum-de-morgan-untuk-gabungan-overline-a-cup-b-overline-a-cap-overline-b" title="Link to this heading">#</a></h2>
+<h3>1.Hukum De Morgan untuk Gabungan: <span class="math notranslate nohighlight">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span><a class="headerlink" href="#hukum-de-morgan-untuk-gabungan-overline-a-cup-b-overline-a-cap-overline-b" title="Link to this heading">#</a></h3>
 <p><em>Pernyataatn</em></p>
 <p><span class="math notranslate nohighlight">\(\overline{A \cup B} = \overline{A} \cap \overline{B}=\{x \mid x \notin A \cup B\}=\{x \mid x \notin A \text{ dan }x \notin B\}\)</span></p>
 <p><em>Penjelasan</em>:</p>
@@ -803,7 +791,7 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 </ul>
 </section>
 <section id="hukum-de-morgan-untuk-irisan-overline-a-cap-b-overline-a-cup-overline-b">
-<h2>2.Hukum De Morgan untuk Irisan: <span class="math notranslate nohighlight">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span><a class="headerlink" href="#hukum-de-morgan-untuk-irisan-overline-a-cap-b-overline-a-cup-overline-b" title="Link to this heading">#</a></h2>
+<h3>2.Hukum De Morgan untuk Irisan: <span class="math notranslate nohighlight">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span><a class="headerlink" href="#hukum-de-morgan-untuk-irisan-overline-a-cap-b-overline-a-cup-overline-b" title="Link to this heading">#</a></h3>
 <p><em>Pernyataan</em></p>
 <p><span class="math notranslate nohighlight">\(\overline{A \cap B} = \overline{A} \cup \overline{B}=\{x \mid x \notin A \cap B\}=\{x \mid x \notin A \text{ atau }x \notin B\}\)</span></p>
 <p><em>Penjelasan</em>:</p>
@@ -823,8 +811,9 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
 </ul>
 </section>
 <section id="id6">
-<h2>Kesimpulan<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h3>Kesimpulan<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>Hukum De Morgan membantu dalam memanipulasi dan memahami negasi dari operasi gabungan dan irisan pada himpunan. Ini sangat berguna dalam teori himpunan, logika proposisional, dan berbagai aplikasi matematika dan komputer. Dengan memahami hukum ini, Anda dapat lebih mudah mengelola dan bekerja dengan berbagai operasi himpunan dan logika.</p>
+</section>
 </section>
 </section>
 
@@ -859,20 +848,20 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Algoritma.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Algoritma</p>
+        <p class="prev-next-title">Welcome to your Mathematic diskret</p>
       </div>
     </a>
     <a class="right-next"
-       href="Aljabar%20boolean.html"
+       href="Logika%20dan%20Pembuktian.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Aljabar boolean dan Gerbang logika</p>
+        <p class="prev-next-title">Logika Matematika</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -883,7 +872,8 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -892,36 +882,39 @@ Jika <span class="math notranslate nohighlight">\(A = \{1, 2\}\)</span> dan <spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-identitas"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Identitas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#himpunan-a-cup-emptyset-a">1. Himpunan <span class="math notranslate nohighlight">\(A \cup \emptyset = A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#himpunan-a-cap-u-a">2. Himpunan <span class="math notranslate nohighlight">\(A \cap U = A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-dominasi"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Dominasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-gabungan-a-cup-u-u">1. Hukum Gabungan  <span class="math notranslate nohighlight">\(A \cup U = U\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-irisan-dengan-himpunan-kosong-a-cap-emptyset-emptyset">2. Hukum Irisan dengan Himpunan Kosong: <span class="math notranslate nohighlight">\(A \cap \emptyset = \emptyset\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-idempoten"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum idempoten</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#irisan-himpunan-dengan-diri-sendiri-cap">1. Irisan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(𝐴 \cap 𝐴\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gabungan-himpunan-dengan-diri-sendiri-a-cup-a">2. Gabungan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(A \cup A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-komplementasi"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komplementasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplemen-dari-komplemen-himpunan-overline-overline-a-a">Komplemen dari Komplemen Himpunan: <span class="math notranslate nohighlight">\(\overline{\overline{A}} = A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-komutatif-dalam-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komutatif Dalam Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-komutatif-untuk-gabungan-union-a-cup-b-b-cup-a">1. Hukum Komutatif untuk Gabungan (Union):<span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-komutatif-untuk-irisan-intersection-a-cap-b-b-cap-a">2. Hukum Komutatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-asosiatif-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Asosiatif dalam Teori Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-asosiatif-untuk-gabungan-union-a-cup-b-cup-c-a-cup-b-cup-c">1. Hukum Asosiatif untuk Gabungan (Union): <span class="math notranslate nohighlight">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>**</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-asosiatif-untuk-irisan-intersection-a-cap-b-cap-c-a-cap-b-cap-c">2. Hukum Asosiatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-distributif-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Distributif dalam Teori Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-distributif-union-terhadap-intersection-a-cup-b-cap-c-a-cup-b-cap-a-cup-c">1.Hukum Distributif Union terhadap Intersection: <span class="math notranslate nohighlight">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-distributif-intersection-terhadap-union-a-cap-b-cup-c-a-cap-b-cup-a-cap-c">2.Hukum Distributif Intersection terhadap Union: <span class="math notranslate nohighlight">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-de-morgan-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum De Morgan dalam Teori Himpunan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-de-morgan-untuk-gabungan-overline-a-cup-b-overline-a-cap-overline-b">1.Hukum De Morgan untuk Gabungan: <span class="math notranslate nohighlight">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-de-morgan-untuk-irisan-overline-a-cap-b-overline-a-cup-overline-b">2.Hukum De Morgan untuk Irisan: <span class="math notranslate nohighlight">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identitas-himpunan">Identitas Himpunan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-identitas"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Identitas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#himpunan-a-cup-emptyset-a">1. Himpunan <span class="math notranslate nohighlight">\(A \cup \emptyset = A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#himpunan-a-cap-u-a">2. Himpunan <span class="math notranslate nohighlight">\(A \cap U = A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-dominasi"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Dominasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-gabungan-a-cup-u-u">1. Hukum Gabungan  <span class="math notranslate nohighlight">\(A \cup U = U\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-irisan-dengan-himpunan-kosong-a-cap-emptyset-emptyset">2. Hukum Irisan dengan Himpunan Kosong: <span class="math notranslate nohighlight">\(A \cap \emptyset = \emptyset\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-idempoten"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum idempoten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irisan-himpunan-dengan-diri-sendiri-cap">1. Irisan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(𝐴 \cap 𝐴\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gabungan-himpunan-dengan-diri-sendiri-a-cup-a">2. Gabungan Himpunan dengan Diri Sendiri: <span class="math notranslate nohighlight">\(A \cup A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-komplementasi"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komplementasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komplemen-dari-komplemen-himpunan-overline-overline-a-a">Komplemen dari Komplemen Himpunan: <span class="math notranslate nohighlight">\(\overline{\overline{A}} = A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-komutatif-dalam-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Komutatif Dalam Himpunan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-komutatif-untuk-gabungan-union-a-cup-b-b-cup-a">1. Hukum Komutatif untuk Gabungan (Union):<span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-komutatif-untuk-irisan-intersection-a-cap-b-b-cap-a">2. Hukum Komutatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-asosiatif-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Asosiatif dalam Teori Himpunan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-asosiatif-untuk-gabungan-union-a-cup-b-cup-c-a-cup-b-cup-c">1. Hukum Asosiatif untuk Gabungan (Union): <span class="math notranslate nohighlight">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-asosiatif-untuk-irisan-intersection-a-cap-b-cap-c-a-cap-b-cap-c">2. Hukum Asosiatif untuk Irisan (Intersection): <span class="math notranslate nohighlight">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-distributif-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum Distributif dalam Teori Himpunan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-distributif-union-terhadap-intersection-a-cup-b-cap-c-a-cup-b-cap-a-cup-c">1.Hukum Distributif Union terhadap Intersection: <span class="math notranslate nohighlight">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-distributif-intersection-terhadap-union-a-cap-b-cup-c-a-cap-b-cup-a-cap-c">2.Hukum Distributif Intersection terhadap Union: <span class="math notranslate nohighlight">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Kesimpulan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diamond-hukum-de-morgan-dalam-teori-himpunan"><span class="math notranslate nohighlight">\(\Diamond\)</span> Hukum De Morgan dalam Teori Himpunan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-de-morgan-untuk-gabungan-overline-a-cup-b-overline-a-cap-overline-b">1.Hukum De Morgan untuk Gabungan: <span class="math notranslate nohighlight">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hukum-de-morgan-untuk-irisan-overline-a-cap-b-overline-a-cup-overline-b">2.Hukum De Morgan untuk Irisan: <span class="math notranslate nohighlight">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Kesimpulan</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -970,8 +963,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

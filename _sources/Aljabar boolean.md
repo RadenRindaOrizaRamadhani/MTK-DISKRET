@@ -3,7 +3,7 @@ title: Aljabar boolean
 
 ---
 
-## Aljabar boolean dan Gerbang logika
+# Aljabar boolean dan Gerbang logika
 
 Aljabar Boolean adalah sistem matematika yang bekerja dengan dua nilai, yaitu True (1) dan False (0), serta menggunakan operator logika untuk manipulasi ekspresi logika. Aljabar Boolean merupakan dasar dalam desain dan analisis sirkuit digital, pemrograman komputer, serta sistem logika.
 

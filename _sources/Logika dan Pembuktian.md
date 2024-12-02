@@ -1,10 +1,7 @@
 ---
-title: Logika 
+title: Logika dan Pembuktian
 
 ---
-
-
-
 
 # Logika Matematika
 

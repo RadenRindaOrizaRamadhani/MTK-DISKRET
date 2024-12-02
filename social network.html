@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Aljabar boolean dan Gerbang logika &#8212; My sample book</title>
+    <title>Social Network Analysis (SNA) &#8212; My sample book</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Aljabar boolean';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'social network';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Social Network Analysis (SNA)" href="social%20network.html" />
-    <link rel="prev" title="Algoritma" href="Algoritma.html" />
+    <link rel="next" title="Deretan" href="Deret%20dan%20Rekursi.html" />
+    <link rel="prev" title="Aljabar boolean dan Gerbang logika" href="Aljabar%20boolean.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -172,8 +172,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Himpunan.html">Himpunan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Logika%20dan%20Pembuktian.html">Logika Matematika</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Algoritma.html">Algoritma</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aljabar boolean dan Gerbang logika</a></li>
-<li class="toctree-l1"><a class="reference internal" href="social%20network.html">Social Network Analysis (SNA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aljabar%20boolean.html">Aljabar boolean dan Gerbang logika</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Social Network Analysis (SNA)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Deret%20dan%20Rekursi.html">Deretan</a></li>
 
 </ul>
@@ -247,7 +247,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAljabar boolean.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsocial network.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +277,7 @@
       
       
       
-      <li><a href="_sources/Aljabar boolean.md" target="_blank"
+      <li><a href="_sources/social network.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +353,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Aljabar boolean dan Gerbang logika</h1>
+    <h1>Social Network Analysis (SNA)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -363,7 +363,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerbang-logika">Gerbang logika</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-centrality">1.Degree Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">degree centrality:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-degree-centrality">normalisasi degree centrality:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">2. Closeness Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-distance">average distance :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">closeness centrality:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">3.Betweenness Centrality</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -375,230 +385,79 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="aljabar-boolean-dan-gerbang-logika">
-<h1>Aljabar boolean dan Gerbang logika<a class="headerlink" href="#aljabar-boolean-dan-gerbang-logika" title="Link to this heading">#</a></h1>
-<p>Aljabar Boolean adalah sistem matematika yang bekerja dengan dua nilai, yaitu True (1) dan False (0), serta menggunakan operator logika untuk manipulasi ekspresi logika. Aljabar Boolean merupakan dasar dalam desain dan analisis sirkuit digital, pemrograman komputer, serta sistem logika.</p>
-<p>Aljabar boolean secara luas digunakan untuk menganalisis dan menyederhanakan sirkuit digital atau gerbang logika. Teori ini telah menjadi dasar dalam pengembangan sistem digital elektronika modern. Aljabar boolean juga sering digunakan dalam teori himpunan dan statistik.</p>
-<p>Bahkan pada setiap bahasa pemrograman modern, Boolean dianggap sebagai salah satu tipe data dasar dimana hanya memiliki 2 nilai, yaitu true dan false.
-Kaidah-kaidah Hukum Aljabar Boolean</p>
-<p>Terdapat 11 kaidah hukum Aljabar Boolean, yakni</p>
-<p>Berikut adalah penjelasannya:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="social-network-analysis-sna">
+<h1>Social Network Analysis (SNA)<a class="headerlink" href="#social-network-analysis-sna" title="Link to this heading">#</a></h1>
+<p>metode untuk mempelajari dan menganalisis pola hubungan dan interaksi dalam sebuah jaringan sosial. SNA membantu memahami bagaimana individu, kelompok, atau organisasi saling terhubung dan bagaimana struktur jaringan memengaruhi perilaku atau hasil tertentu.
+<img alt="image" src="https://hackmd.io/_uploads/By1LZXlQJg.png" /></p>
+<p><img alt="image" src="https://hackmd.io/_uploads/BynDZmgQJe.png" />
+Social network
+terdapat node yang mewakili orang atau individu atau aktor. Relasi  antar objek  dapat dinyatakan dengan link atau edges yang terjadi antara aktor tersebut, Social network terdiri dari banyak aktor yang mempunyai relasi satu sama lain hingga membentuk peta jaringan sosial yang dinyatakan dengan graph.</p>
+<ul class="simple">
+<li><p>Tidak semua node dalam jaringan adalah penting  (aktor)</p></li>
+<li><p>Mencari node yang paling penting dalam suatu jaringan</p></li>
+<li><p>Centrality adalah penentuan aktor menggunakan ukuran pada Social Network Centrality</p></li>
+</ul>
+<p>Dalam teori graf dan social network dibagi menjadi empat jenis:</p>
 <ol class="arabic simple">
-<li><p>Hukum Komutatif</p></li>
+<li><p>degree centrality,</p></li>
+<li><p>closeness centrality,</p></li>
+<li><p>betweennes centrality</p></li>
+<li><p>eigenvector centrality</p></li>
 </ol>
-<p>Hukum komutatif menyatakan bahwa penukaran urutan variabel tidak memiliki efek pada output dari rangkaian logika.
-A . B = B . A
-A + B = B + A</p>
-<ol class="arabic simple" start="2">
-<li><p>Hukum Asosiatif</p></li>
-</ol>
-<p>Hukum ini menyatakan bahwa operasi logika dapat dilakukan dalam urutan apa pun ketika prioritas variabelnya sama, terlepas dari adanya pengelompokan variabel dalam suatu persamaan.</p>
-<p>( A . B ) . C = A . ( B . C )
-( A + B ) + C = A + ( B + C)</p>
-<ol class="arabic simple" start="3">
-<li><p>Hukum Distributif</p></li>
-</ol>
-<p>Hukum distributif menjelaskan bahwa variabel input pada operasi aljabar boolean dapat disebarkan atau difaktorkan keluar dari ekspresi tanpa mengubah output suatu rangkaian logika.</p>
-<p>A . ( B + C) = (A . B) + (A. C)
-A + (B . C) = (A + B) . ( A + C)
-4. Hukum Absorbsi</p>
-<p>Hukum ini memungkinkan pengurangan ekspresi logika rumit menjadi lebih sederhana dengan menyerap suku-suku serupa.</p>
-<p>A + (A . B) = A
-A . (A + B) = A</p>
-<ol class="arabic simple" start="5">
-<li><p>Hukum Identitas</p></li>
-</ol>
-<p>Dalam  matematika, identitas adalah pernyataan yang benar untuk semua kemungkinan nilai dari variabel.</p>
-<p>Dalam Aljabar Boolean, hukum identitas menyatakan bahwa variabel apa pun yang dijumlahkan dengan nilai 0 atau false akan menghasilkan nilai variabel itu sendiri.</p>
-<p>Hal ini juga berlaku apabila sebuah variabel dikalikan dengan 1 atau nilai true maka akan mengembalikan nilai variabel itu sendiri.
-A + 0 = A
-A . 1 = A</p>
-<ol class="arabic simple" start="6">
-<li><p>Hukum Idempoten</p></li>
-</ol>
-<p>Hukum idempoten menyatakan bahwa menggabungkan suatu variabel dengan dirinya sendiri baik dengan operasi penambahan (OR) atau perkalian logika (AND) akan menghasilkan nilai yang setara dengan variabel tersebut.</p>
-<p>A + A = A
-A . A = A</p>
-<ol class="arabic simple" start="7">
-<li><p>Hukum Komplemen</p></li>
-</ol>
-<p>Hukum komplemen menyatakan bahwa variabel input yang dijumlahkan dengan invers dari variabel tersebut akan menghasilkan nilai 1 atau true, sedangkan jika dilakukan operasi perkalian menghasilkan nilai 0 atau false.</p>
-<p>A + A’ = 1
-A . A’ = 0</p>
-<ol class="arabic simple" start="8">
-<li><p>Hukum Dominasi</p></li>
-</ol>
-<p>Hukum dominasi menyatakan bahwa dalam suatu konjungsi atau operasi perkalian, suatu nilai kebenaran akan selalu mendominasi.</p>
-<p>A . 0 = 0
-A . 1 = 1</p>
-<ol class="arabic simple" start="9">
-<li><p>Hukum Involusi (Negasi Ganda)</p></li>
-</ol>
-<p>Dalam Aljabar Boolean, hukum involusi menyatakan bahwa negasi ganda pada variabel input menghasilkan output variabel itu sendiri.</p>
-<p>(A’)’ = A</p>
-<ol class="arabic simple" start="10">
-<li><p>Hukum De Morgan</p></li>
-</ol>
-<p>Dua teorema penting yang banyak digunakan dalam aljabar Boolean adalah hukum I De Morgan dan hukum II De Morgan. Kedua teorema ini digunakan untuk mengubah ekspresi Boolean.</p>
-<p>Teorema ini pada dasarnya membantu untuk mengurangi ekspresi boolean yang diberikan dalam bentuk yang disederhanakan.</p>
-<p>Hukum I De Morgan</p>
-<p>Hukum pertama menyatakan bahwa komplemen perkalian variabel sama dengan jumlah komplemen individu variabelnya.</p>
-<p>(A.B)’ = A’ + B’</p>
-<p>Hukum II De Morgan</p>
-<p>Hukum kedua menyatakan bahwa komplemen dari penjumlahan variabel sama dengan perkalian dari komplemen individualnya terhadap suatu variabel.</p>
-<p>(A+B)’ = A’ . B’</p>
-<ol class="arabic simple" start="11">
-<li><p>Hukum Inversi</p></li>
-</ol>
-<p>Hukum inversi menjelaskan bahwa komplemen dari nilai kebenaran adalah invers dari nilai tersebut.</p>
-<p>0’ = 1
-1’ = 0</p>
-<section id="gerbang-logika">
-<h2>Gerbang logika<a class="headerlink" href="#gerbang-logika" title="Link to this heading">#</a></h2>
-<p>adalah perangkat yang melakukan operasi logika dengan menggunakan aljabar Boolean, suatu sistem matematika yang digunakan untuk menganalisis dan menyederhanakan ekspresi logika.
-Gerbang Logika Dasar dalam Konteks Aljabar Boolean
-Gerbang NOT
-Gerbang NOT, atau gerbang inverter, membalik logika masukan. Tanda lingkaran kecil pada keluaran gerbang merupakan tanda pembalik.</p>
-<p>Notasi Boolean untuk gerbang NOT adalah adanya garis di atas suatu variabel. Misalnya, NOT A dinotasikan sebagai ( \overline{A} ). Notasi lain untuk NOT A adalah ( A’ ), ( !A ), dan ( \sim A ).</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>A</p></th>
-<th class="head"><p>Y=A</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Gerbang OR
-Output dari gerbang OR akan bernilai 1 jika salah satu dari inputnya adalah 1. Dalam notasi Boolean, gerbang OR dilambangkan dengan simbol ( + ). Operasi OR antara A dan B dinyatakan sebagai ( A + B ).</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>A</p></th>
-<th class="head"><p>B</p></th>
-<th class="head"><p>Y = A+B</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Gerbang AND
-Output dari gerbang AND akan bernilai 1 hanya jika semua inputnya bernilai 1. Dalam notasi Boolean, gerbang AND dilambangkan dengan simbol ( . ) (kali). Operasi AND antara A dan B dinyatakan sebagai ( A \C_B ) dan tabel pembuktiannya sama dengan gerbang OR</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>A</p></th>
-<th class="head"><p>B</p></th>
-<th class="head"><p>Y = A.B</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Gerbang NOR</p>
-<p>Gerbang NOR (NOT-OR) dapat dibentuk dari gabungan gerbang OR dan NOT. Gerbang NOR menghasilkan output 1 hanya jika semua inputnya adalah 0. Jika salah satu atau lebih input bernilai 1, maka outputnya akan menjadi 0.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>A</p></th>
-<th class="head"><p>B</p></th>
-<th class="head"><p>A+B</p></th>
-<th class="head"><p>Y= A+B</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Gerbang NAND
-Gerbang NAND (NOT-AND) dibentuk dari gerbang AND dan NOT. Gerbang NAND menghasilkan output 0 hanya jika semua inputnya adalah 1. Sebaliknya, jika salah satu atau lebih inputnya adalah 0, outputnya akan menjadi 1.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>A</p></th>
-<th class="head"><p>B</p></th>
-<th class="head"><p>Y = AB</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Referensi :<a class="reference external" href="https://www.trivusi.web.id/2022/08/aljabar-boolean.html?m=1">https://www.trivusi.web.id/2022/08/aljabar-boolean.html?m=1</a>
-<a class="reference external" href="https://inovasi.ac.id/wiki/prinsip-gerbang-logika/">https://inovasi.ac.id/wiki/prinsip-gerbang-logika/</a></p>
+<section id="degree-centrality">
+<h2>1.Degree Centrality<a class="headerlink" href="#degree-centrality" title="Link to this heading">#</a></h2>
+<p>adalah salah satu ukuran dalam Social Network Analysis (SNA) yang digunakan untuk menilai tingkat konektivitas suatu node (simpul) dalam sebuah jaringan. Ukuran ini menunjukkan jumlah hubungan langsung yang dimiliki oleh sebuah node, yang merepresentasikan pengaruh atau pentingnya node tersebut dalam jaringan.</p>
+<ul class="simple">
+<li><p>Degree Centrality mengukur jumlah koneksi langsung suatu node dengan node lain.</p></li>
+<li><p>Node dengan nilai degree centrality yang tinggi dianggap lebih penting karena terhubung dengan banyak node dalam jaringan.</p></li>
+</ul>
+<section id="id1">
+<h3>degree centrality:<img alt="image" src="https://hackmd.io/_uploads/Sye1NXgXkx.png" /><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+</section>
+<section id="normalisasi-degree-centrality">
+<h3>normalisasi degree centrality:<img alt="image" src="https://hackmd.io/_uploads/HyveEXg7Je.png" /><a class="headerlink" href="#normalisasi-degree-centrality" title="Link to this heading">#</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/rkJFNmxX1x.png" />Untuk  node 1, degree centrality adalah 3;
+Normalisasi degree centrality adalah<br />
+3/(9-1)=3/8.</p>
+</section>
+</section>
+<section id="closeness-centrality">
+<h2>2. Closeness Centrality<a class="headerlink" href="#closeness-centrality" title="Link to this heading">#</a></h2>
+<p>adalah salah satu ukuran dalam Social Network Analysis (SNA) yang digunakan untuk menilai seberapa dekat atau terhubung suatu node dengan semua node lain dalam jaringan. Ukuran ini mencerminkan kecepatan atau efisiensi suatu node dalam menyebarkan informasi ke seluruh jaringan.</p>
+<section id="average-distance">
+<h3>average distance :<a class="headerlink" href="#average-distance" title="Link to this heading">#</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/HJoVSmxQkl.png" /></p>
+</section>
+<section id="id2">
+<h3>closeness centrality:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/B1Y_BXeXkl.png" />
+contoh:
+<img alt="image" src="https://hackmd.io/_uploads/rJt3rQeXye.png" />
+<img alt="image" src="https://hackmd.io/_uploads/S1warmxmJe.png" />
+<img alt="image" src="https://hackmd.io/_uploads/BywCB7xmJl.png" />
+Node 4  lebih central  dari node 3</p>
+</section>
+<section id="betweenness-centrality">
+<h3>3.Betweenness Centrality<a class="headerlink" href="#betweenness-centrality" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Skor betweeness Centrality mewakili seberapa besar informasi yang tersebar dari suatu aktor. Semakin besar skor, artinya aktor tersebut semakin berperan dalam penyebaran informasi</p></li>
+<li><p>Semakin banyak lintasan yang harus melewati persimpangan itu (misal tidak ada jalan alternatif), maka semakin penting arti persimpangan tersebut. Hal ini menandakan seberapa besar suatu node diperlukan sebagai penghubung dalam penyebaran informasi di dalam jaringan</p></li>
+<li><p>Ukuran ini juga dapat digunakan untuk mengidentifikasi boundary spanners, yaitu orang atau node yang berperan sebagai penghubung (jembatan) antara dua komunitas</p></li>
+<li><p>Menghitung jumlah lintasan terpendek yang melewati suatu node</p></li>
+<li><p>Node dengan  betweenness  tinggi  adalah  penting dalam komunikasi dan penyebaran informasi</p></li>
+</ul>
+<p>Betweenness Centrality:
+<img alt="image" src="https://hackmd.io/_uploads/BkMlPmgX1l.png" /></p>
+<p>penjelasan:
+<img alt="image" src="https://hackmd.io/_uploads/ByWrwmxQyg.png" /> Jumlah lintasan terpendek antara s dan t
+<img alt="image" src="https://hackmd.io/_uploads/ryOCD7xXke.png" /></p>
+<p><img alt="image" src="https://hackmd.io/_uploads/BJqMdQxXJl.png" />
+<img alt="image" src="https://hackmd.io/_uploads/ByFQO7lm1e.png" />
+<img alt="image" src="https://hackmd.io/_uploads/rku4d7xXJx.png" />
+<img alt="image" src="https://hackmd.io/_uploads/BJl8uXemkg.png" />
+Normalisasi Betweenness Centrality
+<img alt="image" src="https://hackmd.io/_uploads/rJ1O_mx7yx.png" /></p>
+</section>
 </section>
 </section>
 
@@ -633,20 +492,20 @@ Gerbang NAND (NOT-AND) dibentuk dari gerbang AND dan NOT. Gerbang NAND menghasil
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Algoritma.html"
+       href="Aljabar%20boolean.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Algoritma</p>
+        <p class="prev-next-title">Aljabar boolean dan Gerbang logika</p>
       </div>
     </a>
     <a class="right-next"
-       href="social%20network.html"
+       href="Deret%20dan%20Rekursi.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Social Network Analysis (SNA)</p>
+        <p class="prev-next-title">Deretan</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -667,7 +526,17 @@ Gerbang NAND (NOT-AND) dibentuk dari gerbang AND dan NOT. Gerbang NAND menghasil
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerbang-logika">Gerbang logika</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-centrality">1.Degree Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">degree centrality:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-degree-centrality">normalisasi degree centrality:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">2. Closeness Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-distance">average distance :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">closeness centrality:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">3.Betweenness Centrality</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

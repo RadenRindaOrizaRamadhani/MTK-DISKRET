@@ -1,8 +1,6 @@
-# Selamat datang di materi matematika diskrit
+# Welcome to your Mathematic diskret
 
-Disini saya mencatat dan merangkum materi dalam mata kuliah Matematika Diskret
-mulai dari Himpunan, Logika, Algoritma, dan Aljabar.
-Kalian bisa melihat materi nya di bawah ini. 
+Berikut adalah rangkuman materi matematika diskret dari Raden Rinda Oriza Ramadhani
 
 ```{tableofcontents}
 ```
