@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to your Mathematic diskret &#8212; My sample book</title>
+    <title>Konsep Utama Naïve Bayes &#8212; My sample book</title>
   
   
   
@@ -60,12 +60,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Probabilitas Diskrit dan Probabilitas Bayesian';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Himpunan" href="Himpunan.html" />
+    <link rel="prev" title="Deretan" href="Deret%20dan%20Rekursi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,8 +115,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -138,7 +134,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -165,13 +161,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Welcome to your Mathematic diskret
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Himpunan.html">Himpunan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Logika%20dan%20Pembuktian.html">Logika Matematika</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Algoritma.html">Algoritma</a></li>
@@ -179,7 +175,7 @@
 <li class="toctree-l1"><a class="reference internal" href="social%20network.html">Social Network Analysis (SNA)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Deret%20dan%20Rekursi.html">Deretan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Probabilitas%20Diskrit%20dan%20Probabilitas%20Bayesian.html">Konsep Utama Naïve Bayes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Konsep Utama Naïve Bayes</a></li>
 
 
 
@@ -254,7 +250,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FProbabilitas Diskrit dan Probabilitas Bayesian.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -284,7 +280,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/Probabilitas Diskrit dan Probabilitas Bayesian.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +343,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -358,11 +356,34 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Mathematic diskret</h1>
+    <h1>Konsep Utama Naïve Bayes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Konsep Utama Naïve Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-kerja-naive-bayes">Langkah Kerja Naïve Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-naive-bayes">Jenis-Jenis Naïve Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terorema-bayes">Terorema Bayes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-naive-bayes">Kelebihan Naïve Bayes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan-naive-bayes">Kekurangan Naïve Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-naive-bayes">Aplikasi Naïve Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-cara-menghitung-terorema-bayes">Contoh Soal Cara Menghitung Terorema Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -372,24 +393,97 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-mathematic-diskret">
-<h1>Welcome to your Mathematic diskret<a class="headerlink" href="#welcome-to-your-mathematic-diskret" title="Link to this heading">#</a></h1>
-<p>Berikut adalah rangkuman materi matematika diskret dari Raden Rinda Oriza Ramadhani</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Himpunan.html">Himpunan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Logika%20dan%20Pembuktian.html">Logika Matematika</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Algoritma.html">Algoritma</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aljabar%20boolean.html">Aljabar boolean dan Gerbang logika</a></li>
-<li class="toctree-l1"><a class="reference internal" href="social%20network.html">Social Network Analysis (SNA)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Deret%20dan%20Rekursi.html">Deretan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Deret%20dan%20Rekursi.html#rekursi">Rekursi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Probabilitas%20Diskrit%20dan%20Probabilitas%20Bayesian.html">Konsep Utama Naïve Bayes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Probabilitas%20Diskrit%20dan%20Probabilitas%20Bayesian.html#langkah-kerja-naive-bayes">Langkah Kerja Naïve Bayes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Probabilitas%20Diskrit%20dan%20Probabilitas%20Bayesian.html#jenis-jenis-naive-bayes">Jenis-Jenis Naïve Bayes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Probabilitas%20Diskrit%20dan%20Probabilitas%20Bayesian.html#terorema-bayes">Terorema Bayes</a></li>
+  <p>Naïve Bayes adalah algoritma klasifikasi berbasis probabilitas yang sederhana dan efisien, yang didasarkan pada Teorema Bayes dengan asumsi bahwa semua fitur (variabel) bersifat independen satu sama lain.</p>
+<section id="konsep-utama-naive-bayes">
+<h1>Konsep Utama Naïve Bayes<a class="headerlink" href="#konsep-utama-naive-bayes" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Teorema Bayes:
+Naïve Bayes memanfaatkan teorema Bayes untuk menghitung probabilitas suatu kelas  C  berdasarkan fitur  <img alt="image" src="https://hackmd.io/_uploads/HkiGsTMEye.png" /></p></li>
+</ol>
+<p><img alt="image" src="https://hackmd.io/_uploads/HJhoj6MVyx.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p>Asumsi Independensi:
+Naïve Bayes mengasumsikan bahwa semua fitur bersifat independen, sehingga:</p></li>
+</ol>
+<p><img alt="image" src="https://hackmd.io/_uploads/SyNRjTGVJl.png" /></p>
+<p>Asumsi ini menyederhanakan perhitungan.</p>
+</section>
+<section id="langkah-kerja-naive-bayes">
+<h1>Langkah Kerja Naïve Bayes<a class="headerlink" href="#langkah-kerja-naive-bayes" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Menghitung Probabilitas Prior:
+Probabilitas awal untuk setiap kelas  C  dihitung berdasarkan data pelatihan.</p></li>
+<li><p>Menghitung Probabilitas Likelihood :
+Probabilitas setiap fitur  untuk kelas  C  dihitung.</p></li>
+<li><p>Membandingkan Probabilitas Posterior:
+Probabilitas dihitung untuk setiap kelas, dan kelas dengan probabilitas tertinggi dipilih sebagai prediksi.</p></li>
+</ol>
+</section>
+<section id="jenis-jenis-naive-bayes">
+<h1>Jenis-Jenis Naïve Bayes<a class="headerlink" href="#jenis-jenis-naive-bayes" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Gaussian Naïve Bayes:
+Digunakan untuk data kontinu, dengan asumsi bahwa fitur mengikuti distribusi normal (Gaussian).</p></li>
+<li><p>Multinomial Naïve Bayes:
+Cocok untuk data diskret, seperti frekuensi kata dalam teks (digunakan pada pengklasifikasian teks).</p></li>
+<li><p>Bernoulli Naïve Bayes:
+Digunakan untuk data biner, misalnya ketika fitur adalah 0 atau 1.</p></li>
+</ol>
+</section>
+<section id="terorema-bayes">
+<h1>Terorema Bayes<a class="headerlink" href="#terorema-bayes" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Posterior adalah distribusi probabilitas setelah memperhitungkan data yang diamati. Dalam Bayesian statistics, posterior diperoleh dengan mengalikan prior dan likelihood, kemudian dinormalisasi agar menjadi distribusi probabilitas yang valid.</p></li>
+<li><p>Prior adalah informasi awal atau keyakinan tentang parameter sebelum melihat data. Biasanya, prior mencerminkan asumsi awal Anda atau pengetahuan sebelumnya yang Anda miliki tentang parameter yang sedang dikaji.</p></li>
+<li><p>Likelihood adalah probabilitas data yang diamati diberikan parameter tertentu. Likelihood berfokus pada hubungan antara parameter dan data yang diamati.</p></li>
 </ul>
-</div>
+<section id="kelebihan-naive-bayes">
+<h2>Kelebihan Naïve Bayes<a class="headerlink" href="#kelebihan-naive-bayes" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Cepat dan Efisien:
+•	Mudah diimplementasikan, bahkan pada dataset besar.
+•	Cepat dalam pelatihan dan prediksi.</p></li>
+<li><p>Tidak Membutuhkan Banyak Data:
+•	Berfungsi baik bahkan dengan dataset kecil.</p></li>
+<li><p>Menangani Banyak Fitur:
+•	Efisien pada data dengan dimensi tinggi.</p></li>
+<li><p>Akurasi Baik untuk Data Tertentu:
+•	Efektif pada klasifikasi teks (e.g., filter spam, analisis sentimen).</p></li>
+</ol>
+</section>
+<section id="kekurangan-naive-bayes">
+<h2>Kekurangan Naïve Bayes<a class="headerlink" href="#kekurangan-naive-bayes" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Asumsi Independensi:
+•	Kinerja bisa menurun jika fitur saling bergantung (karena asumsi independensi tidak valid).</p></li>
+<li><p>Kesalahan Estimasi Probabilitas Nol:
+•	Jika fitur tertentu tidak muncul dalam kelas tertentu di data pelatihan, probabilitasnya menjadi nol. Solusinya adalah smoothing (contoh: Laplace Smoothing).</p></li>
+<li><p>Kurang Cocok untuk Data Kompleks:
+•	Tidak selalu kompetitif dengan algoritma yang lebih canggih pada data non-linear atau kompleks.</p></li>
+</ol>
+<section id="aplikasi-naive-bayes">
+<h3>Aplikasi Naïve Bayes<a class="headerlink" href="#aplikasi-naive-bayes" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Filter Spam: Mengklasifikasikan email menjadi spam atau bukan spam.</p></li>
+<li><p>Analisis Sentimen: Menentukan apakah teks (ulasan, tweet) bersifat positif, negatif, atau netral.</p></li>
+<li><p>Klasifikasi Dokumen: Mengelompokkan dokumen ke dalam kategori tertentu.</p></li>
+<li><p>Prediksi Penyakit: Memprediksi penyakit berdasarkan data gejala pasien.</p></li>
+</ol>
+</section>
+<section id="contoh-soal-cara-menghitung-terorema-bayes">
+<h3>Contoh Soal Cara Menghitung Terorema Bayes<a class="headerlink" href="#contoh-soal-cara-menghitung-terorema-bayes" title="Link to this heading">#</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/S12O0WmNJl.png" /></p>
+<ul class="simple">
+<li><p>Bagaimana kemungkinan/probabilitas usia paruh baya tekanan darah sangat tinggi kemungkinan penyakit Hipertensi (H) atau Tidak (T)</p></li>
+<li><p>Hitunglah probabilitas Hipertensi terhadapa usia paruh baya tekanan darah sangat tinggi</p></li>
+<li><p>Hitunglah probabilitas Tidak Hipertensi terhadap usia paruh baya tekanan darah sangat tinggi</p></li>
+</ul>
+<section id="jawaban">
+<h4>Jawaban<a class="headerlink" href="#jawaban" title="Link to this heading">#</a></h4>
+<p><img alt="158349de-2424-4606-b25a-917e01f4f0f6-min" src="https://hackmd.io/_uploads/rJX3QMQEkg.jpg" /></p>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -422,14 +516,14 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="Himpunan.html"
-       title="next page">
+    <a class="left-prev"
+       href="Deret%20dan%20Rekursi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Himpunan</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Deretan</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -437,6 +531,37 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Konsep Utama Naïve Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-kerja-naive-bayes">Langkah Kerja Naïve Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-naive-bayes">Jenis-Jenis Naïve Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terorema-bayes">Terorema Bayes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-naive-bayes">Kelebihan Naïve Bayes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan-naive-bayes">Kekurangan Naïve Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-naive-bayes">Aplikasi Naïve Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-cara-menghitung-terorema-bayes">Contoh Soal Cara Menghitung Terorema Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
